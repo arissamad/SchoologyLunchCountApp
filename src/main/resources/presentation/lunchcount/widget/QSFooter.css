@@ -1,0 +1,11 @@
+.QSFooter {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	background: white;
+	border-top: 1px solid #ccc;
+	font-size: 0.8em;
+	padding: 7px 10px 5px 0px;
+	text-align: right;
+}

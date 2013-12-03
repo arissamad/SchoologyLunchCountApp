@@ -1,0 +1,3 @@
+function LogOut() {
+	location.href = "/";
+}

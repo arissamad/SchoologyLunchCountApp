@@ -1,0 +1,59 @@
+/**
+ * https://kuler.adobe.com/Detical-color-theme-2618173/edit/?copy=true&base=1&rule=Custom&selected=1&name=Copy%20of%20Detical&mode=rgb&rgbvalues=0.14901960784313725,0.20784313725490197,0.27058823529411763,0.7686274509803922,0.15294117647058825,0.23529411764705882,0.8431372549019608,0.8549019607843137,0.8588235294117647,0.42745098039215684,0.7372549019607844,0.8588235294117647,1,1,1
+ */
+ 
+@import url(http://weloveiconfonts.com/api/?family=entypo|fontawesome);
+ 
+small {
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+.whole-screen {
+	background: #D7DADB;
+	height: 100%;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.spine {
+	width: 900px;
+	margin: 0 auto;
+	height: 100%;
+	background: white;
+}
+
+.spine-top {
+	background: #6DBCDB;
+	padding: 10px 30px 10px 30px;
+	color: white;
+	margin-bottom: 50px;
+	border-bottom: 2px solid #C4273C;
+}
+
+.app-content {
+	padding: 0px 40px;
+	line-height: 1.2;
+}
+
+.clear {
+	clear: both;
+}
+
+/** EMBEDDED APP **/
+.embedded.whole-screen {
+	background: white;
+}
+
+.embedded .menu-container {
+	display: none;
+}
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}

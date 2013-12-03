@@ -1,0 +1,77 @@
+table.login-table {
+	width: 600px;
+	margin: 0 auto;
+}
+
+table.login-table .label {
+	font-size: 2em;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	text-align: right;
+}
+
+table.login-table .value input {
+	padding: 5px 5px 10px 5px;
+	border: 1px solid grey;
+	font-size: 2em;
+	width: 100%;
+	color: #555;
+	margin-bottom: 8px;
+}
+
+.login-button {
+	display: block;
+	border:1px solid grey;
+	padding: 10px 10px 10px 10px;
+	font-size: 2em;
+	color: #555;
+	width: 150px;
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: center;
+	background: #FFD700;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.login-button.active:hover {
+	background: #FFFACD;
+}
+
+.login-button.inactive {
+	opacity: 0.3;
+	cursor: default;
+}
+
+.login-message {
+	width: 300px;
+	margin: 0 auto;
+	margin-top: 20px;
+	color: orange;
+	font-style: italic;
+	text-align: center;
+}
+
+.start-trial-btn {
+	width: 300px;
+	font-size: 1.2em;
+}
+
+.wide-btn {
+	width: 300px;
+}
+
+.forgot-password {
+	float: right;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.forgot-password-success {
+	display: none;
+}
+
+.hide {
+	display: none;
+}
