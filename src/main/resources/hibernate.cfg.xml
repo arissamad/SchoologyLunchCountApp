@@ -16,6 +16,6 @@
         <property name="hibernate.connection.password"></property>
         <property name="hbm2ddl.auto">none</property> <!-- update normally -->
         <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.format_sql">false</property>
     </session-factory>
 </hibernate-configuration>
