@@ -34,7 +34,7 @@ public class DirectLogin extends SamlLoginParent {
 		}
 		
 		// Okay now redirect to app page.
-		String location = getServer() + "/lunchcount_embedded";
+		String location = getParameter("RelayState");
 		System.out.println("User is logged in. Redirecting to lunchcount page: " + location);
 		
 		try {
