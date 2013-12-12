@@ -45,8 +45,8 @@ public abstract class SamlLoginParent extends ApiBase {
 				byte[] samlBytes = Base64.decodeBase64(samlResponse.getBytes());
 				String samlStr = new String(samlBytes, "UTF-8");
 				
-				System.out.println("SAML Decoded:\n" + samlStr);
-				System.out.println("\n");
+				//System.out.println("SAML Decoded:\n" + samlStr);
+				//System.out.println("\n");
 				
 				DefaultBootstrap.bootstrap();
 				
@@ -139,6 +139,7 @@ public abstract class SamlLoginParent extends ApiBase {
 		Account account = finder.findByField(Account.class, "schoologyAccountId", schoologyUser.getSchoolId());
 		
 		if(account == null) {
+			System.out.println("Creating new account.");
 			account = new Account();
 			account.setId(new Integer(schoologyUser.getSchoolId()));
 			account.setSchoologyAccountId(schoologyUser.getSchoolId());
@@ -155,6 +156,7 @@ public abstract class SamlLoginParent extends ApiBase {
 		User user = get(User.class, schoologyUser.getUid());
 		
 		if(user == null) {
+			System.out.println("Creating new user.");
 			user = new User();
 			user.setAccountId(account.getId() + "");
 			user.setId(schoologyUser.getUid());

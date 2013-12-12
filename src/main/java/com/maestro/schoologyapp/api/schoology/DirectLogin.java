@@ -29,6 +29,7 @@ public class DirectLogin extends SamlLoginParent {
 		
 		if(userSession == null) {
 			// Not logged in. Log the user in again.
+			System.out.println("User not logged in. Logging in...");
 			SirraLogin.loginUser(schoologyUser.getUid());
 		}
 		
