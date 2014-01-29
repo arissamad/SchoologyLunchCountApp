@@ -31,9 +31,9 @@ function AddLunchCount(date, lunchCount) {
 	
 	fw.setValues(this.lunchCount);
 	fw.finish();
-	
-	new LW(2);
 
+	dialog.buttons();
+	
 	if (this.lunchCountId != null) {
 		var bw = new ButtonWidget("Delete", $A(this, function() {
 			bw.loading();

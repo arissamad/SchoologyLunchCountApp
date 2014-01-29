@@ -42,6 +42,7 @@ public abstract class SamlLoginParent extends ApiBase {
 		if(samlResponse != null && samlResponse.length() > 0) {
 			
 			try {
+				System.out.println("Decode begin");
 				byte[] samlBytes = Base64.decodeBase64(samlResponse.getBytes());
 				String samlStr = new String(samlBytes, "UTF-8");
 				
@@ -57,6 +58,9 @@ public abstract class SamlLoginParent extends ApiBase {
 				DocumentBuilder docBuilder = documentBuilderFactory.newDocumentBuilder();
 
 				Document document = docBuilder.parse(is);
+				
+				System.out.println("XML Document parsed.");
+				
 				Element element = document.getDocumentElement();
 				
 				

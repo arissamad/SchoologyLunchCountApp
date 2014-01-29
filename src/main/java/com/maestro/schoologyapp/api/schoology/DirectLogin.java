@@ -21,6 +21,7 @@ public class DirectLogin extends SamlLoginParent {
 	@POST
 	public void login() {
 		
+		System.out.println("Start DirectLogin");
 		SchoologyUser schoologyUser = getSchoologyUser();
 		initSirraUser(schoologyUser);
 		

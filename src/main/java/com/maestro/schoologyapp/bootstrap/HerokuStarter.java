@@ -10,6 +10,7 @@ import com.maestro.schoologyapp.api.users.entity.*;
 import com.sirra.server.*;
 import com.sirra.server.persistence.*;
 import com.sirra.server.rest.*;
+import com.sirra.appcore.email.*;
 import com.sirra.appcore.firebase.*;
 import com.sirra.appcore.plans.*;
 import com.sirra.appcore.sql.*;
@@ -32,6 +33,8 @@ public class HerokuStarter {
     		HibernateStarter.init("com.maestro.schoologyapp", Config.getInstance().get("PostgresPassword"));
     	}
     	
+    	SqlSearch.initSharedTables("com.maestro");
+    	
     	// Set base package for API classes
     	ApiServlet.setAPIPackageBase("com.maestro");
     	
@@ -50,6 +53,13 @@ public class HerokuStarter {
     	
     	// Define the menus
     	ConfigureMenus.configure();
+    	
+    	// Read the API classes
+    	ApiServlet.prepareClasses();
+    	
+    	EmailPerson.configure("QuickSchools Support", "support@quickschools.com");
+    	
+    	System.out.println("Server Configured. Now starting webserver.");
     	
     	String webPort = System.getenv("PORT");
         int port = isBlank(webPort) ? 8080 : Integer.parseInt(webPort);
