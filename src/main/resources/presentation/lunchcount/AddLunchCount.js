@@ -51,7 +51,8 @@ function AddLunchCount(date, lunchCount) {
 		bw.widget.css("float", "right");
 	}
 	
-	var updateButton = new ButtonWidget("Add", $A(this, function() {
+	var updateButton = new ButtonWidget("Save", $A(this, function() {
+		
 		if(!fw.verify()) return;
 		
 		var parameters = {

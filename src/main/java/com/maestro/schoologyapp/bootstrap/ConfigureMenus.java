@@ -20,7 +20,7 @@ public class ConfigureMenus {
 		
 		// Next, define each role, and specify the menus available to each role
 		menuSet.setTargetRoles("all");
-		menuSet.assignMenus("logout");
+		menuSet.assignMenus("lunchcount_embedded", "logout"); // I put lunchcount_embedded here so it will work for ALL schoology role types
 		
 		menuSet.setTargetRoles("user", "admin");
 		menuSet.assignMenus("lunchcount", "lunchcount_embedded");
