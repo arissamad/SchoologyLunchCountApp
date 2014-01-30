@@ -47,17 +47,25 @@ public abstract class SamlLoginParent extends ApiBase {
 				byte[] samlBytes = Base64.decodeBase64(samlResponse.getBytes());
 				String samlStr = new String(samlBytes, "UTF-8");
 				
+				System.out.println("C1");
+				
 				//System.out.println("SAML Decoded:\n" + samlStr);
 				//System.out.println("\n");
 				
 				DefaultBootstrap.bootstrap();
 				
+				System.out.println("C2");
+				
 				ByteArrayInputStream is = new ByteArrayInputStream(samlStr.getBytes());
+				
+				System.out.println("C3");
 
 				DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 				documentBuilderFactory.setNamespaceAware(true);
 				DocumentBuilder docBuilder = documentBuilderFactory.newDocumentBuilder();
 
+				System.out.println("C4");
+				
 				Document document = docBuilder.parse(is);
 				
 				Date endDate = new Date();
