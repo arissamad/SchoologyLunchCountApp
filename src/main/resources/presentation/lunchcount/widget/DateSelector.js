@@ -31,7 +31,6 @@ DateSelector.prototype.update = function(firstTime) {
 	if(firstTime != true) {
 		clearTimeout(this.timeoutId);
 		this.timeoutId = setTimeout($IA(this, function() {
-			log("Boom");
 			this.onChangeAction.call();
 		}), 500);
 	}
