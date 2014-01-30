@@ -40,6 +40,9 @@ public abstract class SamlLoginParent extends ApiBase {
 	}
 
 	protected SchoologyUser getSchoologyUser() {
+		
+		String userAgent = SirraSession.get().getRequest().getHeader("User-Agent");
+		System.out.println("User Agent is " + userAgent);
 
 		String samlResponse = getParameter("SAMLResponse");
 		//System.out.println("SAML: " + samlResponse);
@@ -50,27 +53,18 @@ public abstract class SamlLoginParent extends ApiBase {
 		if(samlResponse != null && samlResponse.length() > 0) {
 			
 			try {
-				System.out.println("Decode begin");
 				Date beginDate = new Date();
 				byte[] samlBytes = Base64.decodeBase64(samlResponse.getBytes());
 				String samlStr = new String(samlBytes, "UTF-8");
 				
-				System.out.println("C1");
-				
 				//System.out.println("SAML Decoded:\n" + samlStr);
 				//System.out.println("\n");
 				
-				System.out.println("C2");
-				
 				ByteArrayInputStream is = new ByteArrayInputStream(samlStr.getBytes());
-				
-				System.out.println("C3");
 
 				DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 				documentBuilderFactory.setNamespaceAware(true);
 				DocumentBuilder docBuilder = documentBuilderFactory.newDocumentBuilder();
-
-				System.out.println("C4");
 				
 				Document document = docBuilder.parse(is);
 				
