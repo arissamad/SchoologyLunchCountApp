@@ -6,6 +6,7 @@ import org.eclipse.jetty.server.*;
 import org.eclipse.jetty.webapp.*;
 
 import com.maestro.schoologyapp.api.accounts.entity.*;
+import com.maestro.schoologyapp.api.schoology.*;
 import com.maestro.schoologyapp.api.users.entity.*;
 import com.sirra.server.*;
 import com.sirra.server.persistence.*;
@@ -56,6 +57,9 @@ public class HerokuStarter {
     	
     	// Read the API classes
     	ApiServlet.prepareClasses();
+    	
+    	// Initialize OpenSAML libraries
+    	SamlLoginParent.initializeOpenSaml();
     	
     	EmailPerson.configure("QuickSchools Support", "support@quickschools.com");
     	

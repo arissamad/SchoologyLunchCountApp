@@ -30,6 +30,14 @@ import com.sirra.server.session.*;
  * @author aris
  */
 public abstract class SamlLoginParent extends ApiBase {
+	
+	public static void initializeOpenSaml() {
+		try {
+			DefaultBootstrap.bootstrap();
+		} catch(Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 	protected SchoologyUser getSchoologyUser() {
 
@@ -51,8 +59,6 @@ public abstract class SamlLoginParent extends ApiBase {
 				
 				//System.out.println("SAML Decoded:\n" + samlStr);
 				//System.out.println("\n");
-				
-				DefaultBootstrap.bootstrap();
 				
 				System.out.println("C2");
 				
