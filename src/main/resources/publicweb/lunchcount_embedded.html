@@ -13,6 +13,12 @@ function onSirraStart() {
 	new Page("lunchcount_embedded");
 }
 log("onSirraStart available");
+
+if(window._sirraReady == true) {
+	log("control.js had already loaded. Starting...");
+	onSirraStart();
+}
+
 </script>
 
 </body>
