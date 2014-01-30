@@ -15,13 +15,13 @@ function AddLunchCount(date, lunchCount) {
 	new LabelWidget("Teacher");
 	
 	fw.value();
-	fw.link("teacherName", new InputWidget());
+	fw.link("teacherName", new InputWidget(), $V("Teacher", v.notEmpty));
 	
 	fw.label();
 	new LabelWidget("Count");
 	
 	fw.value();
-	fw.link("count", new InputWidget());
+	fw.link("count", new InputWidget(), $V("Count", v.notEmpty, v.int));
 	
 	fw.label();
 	new LabelWidget("Notes");
@@ -30,6 +30,10 @@ function AddLunchCount(date, lunchCount) {
 	fw.link("notes", new InputWidget());
 	
 	fw.setValues(this.lunchCount);
+	fw.focus();
+	fw.submitOnEnter($A(this, function() {
+		updateButton.trigger();
+	}));
 	fw.finish();
 
 	dialog.buttons();
@@ -48,6 +52,8 @@ function AddLunchCount(date, lunchCount) {
 	}
 	
 	var updateButton = new ButtonWidget("Add", $A(this, function() {
+		if(!fw.verify()) return;
+		
 		var parameters = {
 			date: DateUtil.toPlainDate(this.date),
 			teacherName: fw.getValue("teacherName"),

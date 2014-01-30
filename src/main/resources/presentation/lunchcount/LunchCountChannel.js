@@ -61,7 +61,7 @@ LunchCountChannel.prototype.render = function() {
 		new LinkWidget("Edit", $A(this, function() {
 			new AddLunchCount(this.currDate, lunchCount).setRefreshHandler($A(this, function(fullRefresh) {
 				if (fullRefresh == true) {
-					tw.refresh.call();
+					tw.refresh();
 				} else {
 					tw.refreshRow(lunchCount.id, td);
 				}
