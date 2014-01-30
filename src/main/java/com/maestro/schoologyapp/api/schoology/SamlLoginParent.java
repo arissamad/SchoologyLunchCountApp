@@ -43,6 +43,7 @@ public abstract class SamlLoginParent extends ApiBase {
 			
 			try {
 				System.out.println("Decode begin");
+				Date beginDate = new Date();
 				byte[] samlBytes = Base64.decodeBase64(samlResponse.getBytes());
 				String samlStr = new String(samlBytes, "UTF-8");
 				
@@ -59,7 +60,9 @@ public abstract class SamlLoginParent extends ApiBase {
 
 				Document document = docBuilder.parse(is);
 				
-				System.out.println("XML Document parsed.");
+				Date endDate = new Date();
+				long ms = endDate.getTime() - beginDate.getTime();
+				System.out.println("XML Document parsed in " + ms + " ms.");
 				
 				Element element = document.getDocumentElement();
 				
