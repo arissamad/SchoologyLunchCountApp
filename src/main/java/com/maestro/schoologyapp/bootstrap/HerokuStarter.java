@@ -8,9 +8,11 @@ import org.eclipse.jetty.webapp.*;
 import com.maestro.schoologyapp.api.accounts.entity.*;
 import com.maestro.schoologyapp.api.schoology.*;
 import com.maestro.schoologyapp.api.users.entity.*;
+import com.maestro.schoologyapp.bootstrap.filters.*;
 import com.sirra.server.*;
 import com.sirra.server.persistence.*;
 import com.sirra.server.rest.*;
+import com.sirra.server.staticfiles.filter.*;
 import com.sirra.appcore.email.*;
 import com.sirra.appcore.firebase.*;
 import com.sirra.appcore.plans.*;
@@ -60,6 +62,9 @@ public class HerokuStarter {
     	
     	// Initialize OpenSAML libraries
     	SamlLoginParent.initializeOpenSaml();
+    	
+    	// Add filters
+    	FilterEngine.addFilter(new InternetExplorerFilter());
     	
     	EmailPerson.configure("QuickSchools Support", "support@quickschools.com");
     	
